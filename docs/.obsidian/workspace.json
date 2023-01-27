@@ -1,0 +1,176 @@
+{
+  "main": {
+    "id": "934b7bbae18a4bcb",
+    "type": "split",
+    "children": [
+      {
+        "id": "8349773a714efd6d",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "14592a16b8940a58",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "01.日常生活/00.实践记录笔记/01.冥想.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "3105163340f1220b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "01.日常生活/01.个人成长.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "cd09204417a92da9",
+    "type": "split",
+    "children": [
+      {
+        "id": "c478e682935a50c3",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "65d2e110892258f9",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "dbdb4e23fd81367f",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "@Va",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "8ff9175bb6534f87",
+            "type": "leaf",
+            "state": {
+              "type": "starred",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "dfcf00bce4accb58",
+    "type": "split",
+    "children": [
+      {
+        "id": "04a02a542158d31a",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "e792af644b1eb64e",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "01.日常生活/01.个人成长.md",
+                "collapseAll": true,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "276dea5dc2e8bece",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "01.日常生活/01.个人成长.md",
+                "linksCollapsed": true,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "4413da5608d7a42e",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "alphabetical",
+                "useHierarchy": false
+              }
+            }
+          },
+          {
+            "id": "43cbaff2e4c5ad40",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "01.日常生活/01.个人成长.md"
+              }
+            }
+          }
+        ],
+        "currentTab": 3
+      }
+    ],
+    "direction": "horizontal",
+    "width": 200
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "remotely-save:Remotely Save": false,
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false
+    }
+  },
+  "active": "3105163340f1220b",
+  "lastOpenFiles": [
+    "01.日常生活/00.实践记录笔记/01.冥想.md",
+    "01.日常生活/01.个人成长.md",
+    "01.日常生活/01.阅读笔记/01.亲密关系.md",
+    "02.Java开发知识/00.系统设计/02.设计模式.md",
+    "_posts/日记/His SQL 开发规范.md",
+    "02.Java开发知识/00.系统设计/02.设计模式-结合真实案例讲解.md",
+    "02.Java开发知识/05.中间件/04.springBoot/01.SpringBoot常见面试题_常用功能.md",
+    "02.Java开发知识/02.数据库/02.redis/02.redis.md",
+    "02.Java开发知识/02.数据库/02.redis/01.多级缓存.md",
+    "02.Java开发知识/03.多线程学习与记录/02.异步编程实战-读书笔记.md"
+  ]
+}

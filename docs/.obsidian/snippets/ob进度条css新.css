@@ -1,0 +1,55 @@
+.table {
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+.com {
+  margin: 0.3em;
+}
+.com div {
+  float: left;
+}
+.btn {
+  margin-left: 1px;
+  display: flex;
+  background: rgba(0,0,0,0)!important;
+  -webkit-user-select: none;
+  height: 1em;
+}
+.btn div {
+  background: rgba(0,0,0,0)!important;
+  line-height: 8px;
+  height: 1em;
+  width: 1em;
+}
+.btn div:hover {
+  opacity: 0.3;
+}
+.per {
+  -webkit-user-select: none;
+  line-height: 14px;
+  font-size: 0.8em;
+}
+.progress {
+  background: transparent;
+  margin-right: 0.3em;
+  padding: 0.15em;
+  border-style: solid;
+  border-width: 0.15em;
+  border-radius: 0.25em;
+  width: calc(var(--line-width-readable)*0.5);
+}
+.p-bar.p-red {
+  background: #c70000;
+}
+.p-bar.p-yellow {
+  background: #948600;
+}
+.p-bar.p-green {
+  background: #008a20;
+}
+.p-bar {
+  display: flex;
+  height: 0.75em;
+  border-radius: 0.1rem;
+  transition: width .2s linear;
+}
