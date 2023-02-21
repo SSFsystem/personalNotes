@@ -1,3 +1,16 @@
+---
+title: His SQL 开发规范
+date: 2023-01-17 10:02:17
+permalink: /pages/a69dbd/
+sidebar: auto
+categories:
+  - 随笔
+tags:
+  - 
+author: 
+  name: 维生cc
+  link: https://github.com/SSFsystem
+---
 
 # 索引相关
 ## 索引
