@@ -1,5 +1,7 @@
 [
   "remotely-save",
   "dataview",
-  "metaedit"
+  "metaedit",
+  "obsidian-markmind",
+  "obsidian-excel-to-markdown-table"
 ]

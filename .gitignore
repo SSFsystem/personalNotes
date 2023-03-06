@@ -20,3 +20,8 @@ urls.txt
 
 # mac
 .DS_Store
+/.idea/.gitignore
+/.idea/modules.xml
+/.idea/libraries/obcss_css.xml
+/.idea/personalNotes.iml
+/.idea/vcs.xml
