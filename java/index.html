@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>技术 | 知识库</title>
+    <meta name="generator" content="VuePress 1.9.5">
+    <link rel="icon" href="/personalNotes/img/favicon.ico">
+    <meta name="description" content="个人经历记录存储">
+    <meta name="keywords" content="后端,java,springBoot,ES,git,github,markdown">
+    <meta name="baidu-site-verification" content="7F55weZDDc">
+    <meta name="theme-color" content="#11a8cd">
+    
+    <link rel="preload" href="/personalNotes/assets/css/0.styles.aed18662.css" as="style"><link rel="preload" href="/personalNotes/assets/js/app.d6fad385.js" as="script"><link rel="preload" href="/personalNotes/assets/js/2.bb156fa5.js" as="script"><link rel="preload" href="/personalNotes/assets/js/6.57be3cc8.js" as="script"><link rel="prefetch" href="/personalNotes/assets/js/10.b554ec63.js"><link rel="prefetch" href="/personalNotes/assets/js/11.6dd6ac28.js"><link rel="prefetch" href="/personalNotes/assets/js/12.9026f852.js"><link rel="prefetch" href="/personalNotes/assets/js/13.d7c7c066.js"><link rel="prefetch" href="/personalNotes/assets/js/14.7b0c121b.js"><link rel="prefetch" href="/personalNotes/assets/js/15.e7f219ca.js"><link rel="prefetch" href="/personalNotes/assets/js/16.6f1e50d2.js"><link rel="prefetch" href="/personalNotes/assets/js/17.0a37b602.js"><link rel="prefetch" href="/personalNotes/assets/js/18.23710cbc.js"><link rel="prefetch" href="/personalNotes/assets/js/19.d791af63.js"><link rel="prefetch" href="/personalNotes/assets/js/20.1ba89926.js"><link rel="prefetch" href="/personalNotes/assets/js/21.9c8107ab.js"><link rel="prefetch" href="/personalNotes/assets/js/22.64156efd.js"><link rel="prefetch" href="/personalNotes/assets/js/23.b2534940.js"><link rel="prefetch" href="/personalNotes/assets/js/24.f7920eda.js"><link rel="prefetch" href="/personalNotes/assets/js/25.98b06a14.js"><link rel="prefetch" href="/personalNotes/assets/js/26.979ec293.js"><link rel="prefetch" href="/personalNotes/assets/js/27.b680b9b6.js"><link rel="prefetch" href="/personalNotes/assets/js/28.e20be018.js"><link rel="prefetch" href="/personalNotes/assets/js/29.5a3dc65f.js"><link rel="prefetch" href="/personalNotes/assets/js/3.d510640d.js"><link rel="prefetch" href="/personalNotes/assets/js/30.62259266.js"><link rel="prefetch" href="/personalNotes/assets/js/31.5acc71f6.js"><link rel="prefetch" href="/personalNotes/assets/js/32.74b2e26f.js"><link rel="prefetch" href="/personalNotes/assets/js/33.b8dae350.js"><link rel="prefetch" href="/personalNotes/assets/js/34.8efc684e.js"><link rel="prefetch" href="/personalNotes/assets/js/35.5d8d2b6b.js"><link rel="prefetch" href="/personalNotes/assets/js/36.3a18b187.js"><link rel="prefetch" href="/personalNotes/assets/js/37.49ea40c1.js"><link rel="prefetch" href="/personalNotes/assets/js/38.2e9f80e2.js"><link rel="prefetch" href="/personalNotes/assets/js/39.c26caf8b.js"><link rel="prefetch" href="/personalNotes/assets/js/4.493b9bca.js"><link rel="prefetch" href="/personalNotes/assets/js/40.75ea59ad.js"><link rel="prefetch" href="/personalNotes/assets/js/41.71c2884e.js"><link rel="prefetch" href="/personalNotes/assets/js/42.5976dd5a.js"><link rel="prefetch" href="/personalNotes/assets/js/43.36fcbe1f.js"><link rel="prefetch" href="/personalNotes/assets/js/44.d4868c85.js"><link rel="prefetch" href="/personalNotes/assets/js/45.46ca7e98.js"><link rel="prefetch" href="/personalNotes/assets/js/46.580d728b.js"><link rel="prefetch" href="/personalNotes/assets/js/47.1e7dfd1a.js"><link rel="prefetch" href="/personalNotes/assets/js/48.77c1ad86.js"><link rel="prefetch" href="/personalNotes/assets/js/49.e4fabe5f.js"><link rel="prefetch" href="/personalNotes/assets/js/5.2076637a.js"><link rel="prefetch" href="/personalNotes/assets/js/50.289d80d7.js"><link rel="prefetch" href="/personalNotes/assets/js/51.8034bfbb.js"><link rel="prefetch" href="/personalNotes/assets/js/52.22e00fc4.js"><link rel="prefetch" href="/personalNotes/assets/js/53.384db0a0.js"><link rel="prefetch" href="/personalNotes/assets/js/54.5e3c1b5e.js"><link rel="prefetch" href="/personalNotes/assets/js/55.67b32a2f.js"><link rel="prefetch" href="/personalNotes/assets/js/56.ae590004.js"><link rel="prefetch" href="/personalNotes/assets/js/57.52e2b286.js"><link rel="prefetch" href="/personalNotes/assets/js/58.c5411222.js"><link rel="prefetch" href="/personalNotes/assets/js/59.7d447bed.js"><link rel="prefetch" href="/personalNotes/assets/js/60.cc22d4e5.js"><link rel="prefetch" href="/personalNotes/assets/js/61.92bb59c9.js"><link rel="prefetch" href="/personalNotes/assets/js/62.bb7d8500.js"><link rel="prefetch" href="/personalNotes/assets/js/63.2b50837e.js"><link rel="prefetch" href="/personalNotes/assets/js/64.43f2c508.js"><link rel="prefetch" href="/personalNotes/assets/js/65.1c6a976a.js"><link rel="prefetch" href="/personalNotes/assets/js/66.74d76af7.js"><link rel="prefetch" href="/personalNotes/assets/js/67.cb6ca44f.js"><link rel="prefetch" href="/personalNotes/assets/js/68.ac11ab9f.js"><link rel="prefetch" href="/personalNotes/assets/js/69.aa8aeec9.js"><link rel="prefetch" href="/personalNotes/assets/js/7.a20edfe2.js"><link rel="prefetch" href="/personalNotes/assets/js/70.603d1e05.js"><link rel="prefetch" href="/personalNotes/assets/js/71.717219aa.js"><link rel="prefetch" href="/personalNotes/assets/js/72.7b95baf7.js"><link rel="prefetch" href="/personalNotes/assets/js/73.a3531210.js"><link rel="prefetch" href="/personalNotes/assets/js/74.514a8be9.js"><link rel="prefetch" href="/personalNotes/assets/js/75.b53c9535.js"><link rel="prefetch" href="/personalNotes/assets/js/76.86ed6670.js"><link rel="prefetch" href="/personalNotes/assets/js/77.56b097e7.js"><link rel="prefetch" href="/personalNotes/assets/js/78.c86e79b2.js"><link rel="prefetch" href="/personalNotes/assets/js/79.33fbf709.js"><link rel="prefetch" href="/personalNotes/assets/js/8.acd630ef.js"><link rel="prefetch" href="/personalNotes/assets/js/80.13738fab.js"><link rel="prefetch" href="/personalNotes/assets/js/81.fe85c348.js"><link rel="prefetch" href="/personalNotes/assets/js/9.ad8b1d10.js">
+    <link rel="stylesheet" href="/personalNotes/assets/css/0.styles.aed18662.css">
+  </head>
+  <body class="theme-mode-light">
+    <div id="app" data-server-rendered="true"><div class="theme-container sidebar-open no-sidebar"><header class="navbar blur"><div title="目录" class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/personalNotes/" class="home-link router-link-active"><img src="/personalNotes/img/logo.png" alt="知识库" class="logo"> <span class="site-name can-hide">知识库</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/personalNotes/" class="nav-link">首页</a></div><div class="nav-item"><a href="/personalNotes/everyData/" class="nav-link">日常</a></div><div class="nav-item"><a href="/personalNotes/java/" aria-current="page" class="nav-link router-link-exact-active router-link-active">java</a></div> <a href="https://github.com/xugaoyi/vuepress-theme-vdoing" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar-hover-trigger"></div> <aside class="sidebar" style="display:none;"><div class="blogger"><img src="https://avatars.githubusercontent.com/u/40734477?v=4"> <div class="blogger-info"><h3>维生cc</h3> <span>技术菜菜</span></div></div> <nav class="nav-links"><div class="nav-item"><a href="/personalNotes/" class="nav-link">首页</a></div><div class="nav-item"><a href="/personalNotes/everyData/" class="nav-link">日常</a></div><div class="nav-item"><a href="/personalNotes/java/" aria-current="page" class="nav-link router-link-exact-active router-link-active">java</a></div> <a href="https://github.com/xugaoyi/vuepress-theme-vdoing" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><a href="/personalNotes/everyData/" class="sidebar-link">技术</a></li><li><a href="/personalNotes/java/" aria-current="page" class="active sidebar-link">技术</a></li></ul> </aside> <div><main class="page"><div class="theme-vdoing-wrapper "><div class="placeholder"></div> <div class="theme-vdoing-content theme-vdoing-content" data-v-2cf874fa><div class="column-wrapper" data-v-2cf874fa><img src="/personalNotes/img/other.png" data-v-2cf874fa> <dl class="column-info" data-v-2cf874fa><dt class="title" data-v-2cf874fa>技术</dt> <dd class="description" data-v-2cf874fa>java技术栈知识</dd></dl></div> <div class="catalogue-wrapper" data-v-2cf874fa><div class="catalogue-title" data-v-2cf874fa>目录</div> <div class="catalogue-content" data-v-2cf874fa><dl data-v-2cf874fa><dt id="系统设计" data-v-2cf874fa><a href="#系统设计" class="header-anchor" data-v-2cf874fa>#</a>
+            1. 系统设计
+          </dt> <dd data-v-2cf874fa><a href="/personalNotes/pages/1ff699/" data-v-2cf874fa>1-1. 系统设计必知必会
+                  <!----></a><a href="/personalNotes/pages/8ddf6f/" data-v-2cf874fa>1-2. 设计模式
+                  <!----></a><a href="/personalNotes/pages/4e5f4b/" data-v-2cf874fa>1-3. 秒杀系统设计
+                  <!----></a><a href="/personalNotes/pages/3f412a/" data-v-2cf874fa>1-4. 排行榜
+                  <!----></a><a href="/personalNotes/pages/ed4eb5/" data-v-2cf874fa>1-5. 微博 Feed 流_信息流系统？
+                  <!----></a></dd></dl><dl data-v-2cf874fa><dt id="Java" data-v-2cf874fa><a href="#Java" class="header-anchor" data-v-2cf874fa>#</a>
+            2. Java
+          </dt> <dd data-v-2cf874fa><a href="/personalNotes/pages/291b55/" data-v-2cf874fa>2-1. Effective  java 的学习
+                  <!----></a><a href="/personalNotes/pages/62fa36/" data-v-2cf874fa>2-2. 基础
+                  <!----></a><a href="/personalNotes/pages/afd30d/" data-v-2cf874fa>2-3. Java8的重要知识点
+                  <!----></a><a href="/personalNotes/pages/c89360/" data-v-2cf874fa>2-4. 反射
+                  <!----></a><a href="/personalNotes/pages/b26807/" data-v-2cf874fa>2-5. 集合
+                  <!----></a><a href="/personalNotes/pages/f57c0b/" data-v-2cf874fa>2-6. 静态代理+JDK/CGLIB动态代理实战
+                  <!----></a><a href="/personalNotes/pages/e334d9/" data-v-2cf874fa>2-7. 锁
+                  <!----></a><a href="/personalNotes/pages/1838f8/" data-v-2cf874fa>2-8. 注解
+                  <!----></a><a href="/personalNotes/pages/dada8f/" data-v-2cf874fa>2-9. java业务开发常见问题避坑--未完成
+                  <!----></a><a href="/personalNotes/pages/eecab2/" data-v-2cf874fa>2-10. JVM
+                  <!----></a></dd></dl><dl data-v-2cf874fa><dt id="数据库" data-v-2cf874fa><a href="#数据库" class="header-anchor" data-v-2cf874fa>#</a>
+            3. 数据库
+          </dt> <dd data-v-2cf874fa><div class="sub-cat-wrap" data-v-2cf874fa><div id="mysql" class="sub-title" data-v-2cf874fa><a href="#mysql" class="header-anchor" data-v-2cf874fa>#</a>
+                  3-1. mysql
+                </div> <a href="/personalNotes/pages/5ad063/" data-v-2cf874fa>
+                  3-1-1. Mysql
+                  <!----></a><a href="/personalNotes/pages/d512ac/" data-v-2cf874fa>
+                  3-1-2. mysql实战
+                  <!----></a></div><div class="sub-cat-wrap" data-v-2cf874fa><div id="redis" class="sub-title" data-v-2cf874fa><a href="#redis" class="header-anchor" data-v-2cf874fa>#</a>
+                  3-2. redis
+                </div> <a href="/personalNotes/pages/6830e2/" data-v-2cf874fa>
+                  3-2-1. 多级缓存
+                  <!----></a><a href="/personalNotes/pages/8c8aec/" data-v-2cf874fa>
+                  3-2-2. redis
+                  <!----></a></div><div class="sub-cat-wrap" data-v-2cf874fa><div id="Oracle" class="sub-title" data-v-2cf874fa><a href="#Oracle" class="header-anchor" data-v-2cf874fa>#</a>
+                  3-3. Oracle
+                </div> <a href="/personalNotes/pages/1beed5/" data-v-2cf874fa>
+                  3-3-1. Oracle 笔记考察
+                  <!----></a></div><div class="sub-cat-wrap" data-v-2cf874fa><div id="Elasticsearch" class="sub-title" data-v-2cf874fa><a href="#Elasticsearch" class="header-anchor" data-v-2cf874fa>#</a>
+                  3-4. Elasticsearch
+                </div> <a href="/personalNotes/pages/1c1511/" data-v-2cf874fa>
+                  3-4-1. ElasticSearch--基础操作文档
+                  <!----></a><a href="/personalNotes/pages/24fced/" data-v-2cf874fa>
+                  3-4-2. Es学习文档
+                  <!----></a><a href="/personalNotes/pages/7766d9/" data-v-2cf874fa>
+                  3-4-3. Es集群
+                  <!----></a></div><div class="sub-cat-wrap" data-v-2cf874fa><div id="Mongodb" class="sub-title" data-v-2cf874fa><a href="#Mongodb" class="header-anchor" data-v-2cf874fa>#</a>
+                  3-5. Mongodb
+                </div> </div></dd></dl><dl data-v-2cf874fa><dt id="多线程学习与记录" data-v-2cf874fa><a href="#多线程学习与记录" class="header-anchor" data-v-2cf874fa>#</a>
+            4. 多线程学习与记录
+          </dt> <dd data-v-2cf874fa><a href="/personalNotes/pages/02f5ab/" data-v-2cf874fa>4-1. 多线程学习与记录
+                  <!----></a><a href="/personalNotes/pages/2012ec/" data-v-2cf874fa>4-2. 异步编程实战-读书笔记
+                  <!----></a><a href="/personalNotes/pages/17d293/" data-v-2cf874fa>4-3. Java 并发编程之美
+                  <!----></a></dd></dl><dl data-v-2cf874fa><dt id="问题排查-性能优化" data-v-2cf874fa><a href="#问题排查-性能优化" class="header-anchor" data-v-2cf874fa>#</a>
+            5. 问题排查-性能优化
+          </dt> <dd data-v-2cf874fa><a href="/personalNotes/pages/8cb4fd/" data-v-2cf874fa>5-1. 如果单个接口没有问题,但并发就上不去
+                  <!----></a><a href="/personalNotes/pages/f2b45b/" data-v-2cf874fa>5-2. 线上常见问题与工具
+                  <!----></a><a href="/personalNotes/pages/bbf740/" data-v-2cf874fa>5-3. Junit4--assertThart--单元测试
+                  <!----></a></dd></dl><dl data-v-2cf874fa><dt id="中间件" data-v-2cf874fa><a href="#中间件" class="header-anchor" data-v-2cf874fa>#</a>
+            6. 中间件
+          </dt> <dd data-v-2cf874fa><div class="sub-cat-wrap" data-v-2cf874fa><div id="分布式事务" class="sub-title" data-v-2cf874fa><a href="#分布式事务" class="header-anchor" data-v-2cf874fa>#</a>
+                  6-1. 分布式事务
+                </div> <a href="/personalNotes/pages/0fd9c6/" data-v-2cf874fa>
+                  6-1-1. 事务与分布式锁--同时使用问题
+                  <!----></a><a href="/personalNotes/pages/313e28/" data-v-2cf874fa>
+                  6-1-2. seata-1.4版本
+                  <!----></a></div><div class="sub-cat-wrap" data-v-2cf874fa><div id="kafka" class="sub-title" data-v-2cf874fa><a href="#kafka" class="header-anchor" data-v-2cf874fa>#</a>
+                  6-2. kafka
+                </div> <a href="/personalNotes/pages/0ae16f/" data-v-2cf874fa>
+                  6-2-1. Kafka 的问题答惑
+                  <!----></a><a href="/personalNotes/pages/992452/" data-v-2cf874fa>
+                  6-2-2. kafka 学习笔记
+                  <!----></a></div><div class="sub-cat-wrap" data-v-2cf874fa><div id="rabbitMq" class="sub-title" data-v-2cf874fa><a href="#rabbitMq" class="header-anchor" data-v-2cf874fa>#</a>
+                  6-3. rabbitMq
+                </div> <a href="/personalNotes/pages/8b11e4/" data-v-2cf874fa>
+                  6-3-1. RabbitMq
+                  <!----></a><a href="/personalNotes/pages/d0eb8d/" data-v-2cf874fa>
+                  6-3-2. rabbitMq-幂等性🌈
+                  <!----></a><a href="/personalNotes/pages/423e13/" data-v-2cf874fa>
+                  6-3-3. rabbitMq🌈 思维导图
+                  <!----></a></div><div class="sub-cat-wrap" data-v-2cf874fa><div id="springBoot" class="sub-title" data-v-2cf874fa><a href="#springBoot" class="header-anchor" data-v-2cf874fa>#</a>
+                  6-4. springBoot
+                </div> <a href="/personalNotes/pages/ea5993/" data-v-2cf874fa>
+                  6-4-1. SpringBoot常见面试题/常用功能
+                  <!----></a><a href="/personalNotes/pages/460c9f/" data-v-2cf874fa>
+                  6-4-2. SpringCloud 服务组件
+                  <!----></a></div><div class="sub-cat-wrap" data-v-2cf874fa><div id="Netty" class="sub-title" data-v-2cf874fa><a href="#Netty" class="header-anchor" data-v-2cf874fa>#</a>
+                  6-5. Netty
+                </div> <a href="/personalNotes/pages/c769ba/" data-v-2cf874fa>
+                  6-5-1. netty 入门与实战--
+                  <!----></a><a href="/personalNotes/pages/69ffb5/" data-v-2cf874fa>
+                  6-5-2. Netty实战 阅读笔记
+                  <!----></a></div></dd></dl><dl data-v-2cf874fa><dt id="安全性" data-v-2cf874fa><a href="#安全性" class="header-anchor" data-v-2cf874fa>#</a>
+            7. 安全性
+          </dt> <dd data-v-2cf874fa><a href="/personalNotes/pages/54fb20/" data-v-2cf874fa>7-1. 数据传输加密-
+                  <!----></a></dd></dl><dl data-v-2cf874fa><dt id="分布式扫盲" data-v-2cf874fa><a href="#分布式扫盲" class="header-anchor" data-v-2cf874fa>#</a>
+            8. 分布式扫盲
+          </dt> <dd data-v-2cf874fa><a href="/personalNotes/pages/5d1028/" data-v-2cf874fa>8-1. 定时任务
+                  <!----></a><a href="/personalNotes/pages/3b1bd8/" data-v-2cf874fa>8-2. 分布式配置中心
+                  <!----></a><a href="/personalNotes/pages/017f80/" data-v-2cf874fa>8-3. 分布式日志
+                  <!----></a><a href="/personalNotes/pages/5b7808/" data-v-2cf874fa>8-4. 分布式事务
+                  <!----></a></dd></dl><dl data-v-2cf874fa><dt id="开源项目" data-v-2cf874fa><a href="#开源项目" class="header-anchor" data-v-2cf874fa>#</a>
+            9. 开源项目
+          </dt> <dd data-v-2cf874fa><a href="/personalNotes/pages/54866f/" data-v-2cf874fa>9-1. 从零开始实现一个RPC框架
+                  <!----></a><a href="/personalNotes/pages/4346d4/" data-v-2cf874fa>9-2. 从零实现RPC 框架
+                  <!----></a></dd></dl><dl data-v-2cf874fa><dt id="杂项" data-v-2cf874fa><a href="#杂项" class="header-anchor" data-v-2cf874fa>#</a>
+            10. 杂项
+          </dt> <dd data-v-2cf874fa><a href="/personalNotes/pages/efea9a/" data-v-2cf874fa>10-1. 来自一个老哥邪道的准备经历
+                  <!----></a><a href="/personalNotes/pages/2f8cd8/" data-v-2cf874fa>10-2. 学习方法
+                  <!----></a><a href="/personalNotes/pages/b570c1/" data-v-2cf874fa>10-3. java开发常用工具包
+                  <!----></a></dd></dl></div></div></div> <div class="content-wrapper"><!----> <!----> <!----> <div class="theme-vdoing-content content__default"></div></div> <!----> <div class="page-edit"><!----> <!----> <div class="last-updated"><span class="prefix">上次更新:</span> <span class="time">2023/01/09, 11:34:11</span></div></div> <div class="page-nav-wapper"><div class="page-nav-centre-wrap"><a href="/personalNotes/everyData/" class="page-nav-centre page-nav-centre-prev"><div class="tooltip">技术</div></a> <!----></div> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/personalNotes/everyData/" class="prev">技术</a></span> <!----></p></div></div></div> <div class="article-list no-article-list"><div class="article-title"><a href="/personalNotes/archives/" class="iconfont icon-bi">最近更新</a></div> <div class="article-wrapper"><dl><dd>01</dd> <dt><a href="/personalNotes/pages/eb3032/"><div>
+            Flink 的视频教程
+            <!----></div></a> <span class="date">04-02</span></dt></dl><dl><dd>02</dd> <dt><a href="/personalNotes/pages/9522ac/"><div>
+            数据库优化-3
+            <!----></div></a> <span class="date">03-29</span></dt></dl><dl><dd>03</dd> <dt><a href="/personalNotes/pages/0a4f7f/"><div>
+            基于apache的flink
+            <!----></div></a> <span class="date">03-17</span></dt></dl> <dl><dd></dd> <dt><a href="/personalNotes/archives/" class="more">更多文章&gt;</a></dt></dl></div></div></main></div> <div class="footer"><div class="icons"><a href="mailto:2645327082@qq.com" title="发邮件" target="_blank" class="iconfont icon-youjian"></a><a href="https://github.com/SSFsystem" title="GitHub" target="_blank" class="iconfont icon-github"></a></div> 
+  Theme by
+  <a href="https://github.com/xugaoyi/vuepress-theme-vdoing" target="_blank" title="本站主题">Vdoing</a> 
+    | Copyright © 2019-2023
+    <span>Evan Xu | <a href="https://github.com/xugaoyi/vuepress-theme-vdoing/blob/master/LICENSE" target="_blank">MIT License</a></span></div> <div class="buttons"><div title="返回顶部" class="button blur go-to-top iconfont icon-fanhuidingbu" style="display:none;"></div> <div title="去评论" class="button blur go-to-comment iconfont icon-pinglun" style="display:none;"></div> <div title="主题模式" class="button blur theme-mode-but iconfont icon-zhuti"><ul class="select-box" style="display:none;"><li class="iconfont icon-zidong">
+          跟随系统
+        </li><li class="iconfont icon-rijianmoshi">
+          浅色模式
+        </li><li class="iconfont icon-yejianmoshi">
+          深色模式
+        </li><li class="iconfont icon-yuedu">
+          阅读模式
+        </li></ul></div></div> <!----> <!----> <!----></div><div class="global-ui"><div></div></div></div>
+    <script src="/personalNotes/assets/js/app.d6fad385.js" defer></script><script src="/personalNotes/assets/js/2.bb156fa5.js" defer></script><script src="/personalNotes/assets/js/6.57be3cc8.js" defer></script>
+  </body>
+</html>

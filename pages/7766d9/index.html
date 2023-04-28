@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Es集群 | 知识库</title>
+    <meta name="generator" content="VuePress 1.9.5">
+    <link rel="icon" href="/personalNotes/img/favicon.ico">
+    <meta name="description" content="个人经历记录存储">
+    <meta name="keywords" content="后端,java,springBoot,ES,git,github,markdown">
+    <meta name="baidu-site-verification" content="7F55weZDDc">
+    <meta name="theme-color" content="#11a8cd">
+    
+    <link rel="preload" href="/personalNotes/assets/css/0.styles.aed18662.css" as="style"><link rel="preload" href="/personalNotes/assets/js/app.d6fad385.js" as="script"><link rel="preload" href="/personalNotes/assets/js/2.bb156fa5.js" as="script"><link rel="preload" href="/personalNotes/assets/js/36.3a18b187.js" as="script"><link rel="prefetch" href="/personalNotes/assets/js/10.b554ec63.js"><link rel="prefetch" href="/personalNotes/assets/js/11.6dd6ac28.js"><link rel="prefetch" href="/personalNotes/assets/js/12.9026f852.js"><link rel="prefetch" href="/personalNotes/assets/js/13.d7c7c066.js"><link rel="prefetch" href="/personalNotes/assets/js/14.7b0c121b.js"><link rel="prefetch" href="/personalNotes/assets/js/15.e7f219ca.js"><link rel="prefetch" href="/personalNotes/assets/js/16.6f1e50d2.js"><link rel="prefetch" href="/personalNotes/assets/js/17.0a37b602.js"><link rel="prefetch" href="/personalNotes/assets/js/18.23710cbc.js"><link rel="prefetch" href="/personalNotes/assets/js/19.d791af63.js"><link rel="prefetch" href="/personalNotes/assets/js/20.1ba89926.js"><link rel="prefetch" href="/personalNotes/assets/js/21.9c8107ab.js"><link rel="prefetch" href="/personalNotes/assets/js/22.64156efd.js"><link rel="prefetch" href="/personalNotes/assets/js/23.b2534940.js"><link rel="prefetch" href="/personalNotes/assets/js/24.f7920eda.js"><link rel="prefetch" href="/personalNotes/assets/js/25.98b06a14.js"><link rel="prefetch" href="/personalNotes/assets/js/26.979ec293.js"><link rel="prefetch" href="/personalNotes/assets/js/27.b680b9b6.js"><link rel="prefetch" href="/personalNotes/assets/js/28.e20be018.js"><link rel="prefetch" href="/personalNotes/assets/js/29.5a3dc65f.js"><link rel="prefetch" href="/personalNotes/assets/js/3.d510640d.js"><link rel="prefetch" href="/personalNotes/assets/js/30.62259266.js"><link rel="prefetch" href="/personalNotes/assets/js/31.5acc71f6.js"><link rel="prefetch" href="/personalNotes/assets/js/32.74b2e26f.js"><link rel="prefetch" href="/personalNotes/assets/js/33.b8dae350.js"><link rel="prefetch" href="/personalNotes/assets/js/34.8efc684e.js"><link rel="prefetch" href="/personalNotes/assets/js/35.5d8d2b6b.js"><link rel="prefetch" href="/personalNotes/assets/js/37.49ea40c1.js"><link rel="prefetch" href="/personalNotes/assets/js/38.2e9f80e2.js"><link rel="prefetch" href="/personalNotes/assets/js/39.c26caf8b.js"><link rel="prefetch" href="/personalNotes/assets/js/4.493b9bca.js"><link rel="prefetch" href="/personalNotes/assets/js/40.75ea59ad.js"><link rel="prefetch" href="/personalNotes/assets/js/41.71c2884e.js"><link rel="prefetch" href="/personalNotes/assets/js/42.5976dd5a.js"><link rel="prefetch" href="/personalNotes/assets/js/43.36fcbe1f.js"><link rel="prefetch" href="/personalNotes/assets/js/44.d4868c85.js"><link rel="prefetch" href="/personalNotes/assets/js/45.46ca7e98.js"><link rel="prefetch" href="/personalNotes/assets/js/46.580d728b.js"><link rel="prefetch" href="/personalNotes/assets/js/47.1e7dfd1a.js"><link rel="prefetch" href="/personalNotes/assets/js/48.77c1ad86.js"><link rel="prefetch" href="/personalNotes/assets/js/49.e4fabe5f.js"><link rel="prefetch" href="/personalNotes/assets/js/5.2076637a.js"><link rel="prefetch" href="/personalNotes/assets/js/50.289d80d7.js"><link rel="prefetch" href="/personalNotes/assets/js/51.8034bfbb.js"><link rel="prefetch" href="/personalNotes/assets/js/52.22e00fc4.js"><link rel="prefetch" href="/personalNotes/assets/js/53.384db0a0.js"><link rel="prefetch" href="/personalNotes/assets/js/54.5e3c1b5e.js"><link rel="prefetch" href="/personalNotes/assets/js/55.67b32a2f.js"><link rel="prefetch" href="/personalNotes/assets/js/56.ae590004.js"><link rel="prefetch" href="/personalNotes/assets/js/57.52e2b286.js"><link rel="prefetch" href="/personalNotes/assets/js/58.c5411222.js"><link rel="prefetch" href="/personalNotes/assets/js/59.7d447bed.js"><link rel="prefetch" href="/personalNotes/assets/js/6.57be3cc8.js"><link rel="prefetch" href="/personalNotes/assets/js/60.cc22d4e5.js"><link rel="prefetch" href="/personalNotes/assets/js/61.92bb59c9.js"><link rel="prefetch" href="/personalNotes/assets/js/62.bb7d8500.js"><link rel="prefetch" href="/personalNotes/assets/js/63.2b50837e.js"><link rel="prefetch" href="/personalNotes/assets/js/64.43f2c508.js"><link rel="prefetch" href="/personalNotes/assets/js/65.1c6a976a.js"><link rel="prefetch" href="/personalNotes/assets/js/66.74d76af7.js"><link rel="prefetch" href="/personalNotes/assets/js/67.cb6ca44f.js"><link rel="prefetch" href="/personalNotes/assets/js/68.ac11ab9f.js"><link rel="prefetch" href="/personalNotes/assets/js/69.aa8aeec9.js"><link rel="prefetch" href="/personalNotes/assets/js/7.a20edfe2.js"><link rel="prefetch" href="/personalNotes/assets/js/70.603d1e05.js"><link rel="prefetch" href="/personalNotes/assets/js/71.717219aa.js"><link rel="prefetch" href="/personalNotes/assets/js/72.7b95baf7.js"><link rel="prefetch" href="/personalNotes/assets/js/73.a3531210.js"><link rel="prefetch" href="/personalNotes/assets/js/74.514a8be9.js"><link rel="prefetch" href="/personalNotes/assets/js/75.b53c9535.js"><link rel="prefetch" href="/personalNotes/assets/js/76.86ed6670.js"><link rel="prefetch" href="/personalNotes/assets/js/77.56b097e7.js"><link rel="prefetch" href="/personalNotes/assets/js/78.c86e79b2.js"><link rel="prefetch" href="/personalNotes/assets/js/79.33fbf709.js"><link rel="prefetch" href="/personalNotes/assets/js/8.acd630ef.js"><link rel="prefetch" href="/personalNotes/assets/js/80.13738fab.js"><link rel="prefetch" href="/personalNotes/assets/js/81.fe85c348.js"><link rel="prefetch" href="/personalNotes/assets/js/9.ad8b1d10.js">
+    <link rel="stylesheet" href="/personalNotes/assets/css/0.styles.aed18662.css">
+  </head>
+  <body class="theme-mode-light">
+    <div id="app" data-server-rendered="true"><div class="theme-container sidebar-open have-rightmenu"><header class="navbar blur"><div title="目录" class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/personalNotes/" class="home-link router-link-active"><img src="/personalNotes/img/logo.png" alt="知识库" class="logo"> <span class="site-name can-hide">知识库</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/personalNotes/" class="nav-link">首页</a></div><div class="nav-item"><a href="/personalNotes/everyData/" class="nav-link">日常</a></div><div class="nav-item"><a href="/personalNotes/java/" class="nav-link">java</a></div> <a href="https://github.com/xugaoyi/vuepress-theme-vdoing" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar-hover-trigger"></div> <aside class="sidebar" style="display:none;"><div class="blogger"><img src="https://avatars.githubusercontent.com/u/40734477?v=4"> <div class="blogger-info"><h3>维生cc</h3> <span>技术菜菜</span></div></div> <nav class="nav-links"><div class="nav-item"><a href="/personalNotes/" class="nav-link">首页</a></div><div class="nav-item"><a href="/personalNotes/everyData/" class="nav-link">日常</a></div><div class="nav-item"><a href="/personalNotes/java/" class="nav-link">java</a></div> <a href="https://github.com/xugaoyi/vuepress-theme-vdoing" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>系统设计</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Java</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>数据库</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><section class="sidebar-group collapsable is-sub-group depth-1"><p class="sidebar-heading"><span>mysql</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable is-sub-group depth-1"><p class="sidebar-heading"><span>redis</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable is-sub-group depth-1"><p class="sidebar-heading"><span>Oracle</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable is-sub-group depth-1"><p class="sidebar-heading open"><span>Elasticsearch</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/personalNotes/pages/1c1511/" class="sidebar-link">ElasticSearch--基础操作文档</a></li><li><a href="/personalNotes/pages/24fced/" class="sidebar-link">Es学习文档</a></li><li><a href="/personalNotes/pages/7766d9/" aria-current="page" class="active sidebar-link">Es集群</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header level2"><a href="/personalNotes/pages/7766d9/#搭建" class="sidebar-link">搭建</a></li><li class="sidebar-sub-header level2"><a href="/personalNotes/pages/7766d9/#集群配置" class="sidebar-link">集群配置</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header level3"><a href="/personalNotes/pages/7766d9/#集群配置优先级" class="sidebar-link">集群配置优先级</a></li><li class="sidebar-sub-header level3"><a href="/personalNotes/pages/7766d9/#elasticsearch-yml配置文件-范例" class="sidebar-link">elasticsearch.yml配置文件-范例</a></li></ul></li><li class="sidebar-sub-header level2"><a href="/personalNotes/pages/7766d9/#集群常用操作命令" class="sidebar-link">集群常用操作命令</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header level4"><a href="/personalNotes/pages/7766d9/#查看集群健康状态-cluster-health-api" class="sidebar-link">查看集群健康状态(cluster health API)</a></li><li class="sidebar-sub-header level4"><a href="/personalNotes/pages/7766d9/#查询集群全部信息-cluster-stats-human-pretty" class="sidebar-link">查询集群全部信息 /_cluster/stats?human&amp;pretty'</a></li><li class="sidebar-sub-header level4"><a href="/personalNotes/pages/7766d9/#查看集群节点信息-cat-nodes-human-pretty" class="sidebar-link">查看集群节点信息: /_cat/nodes?human&amp;pretty'</a></li><li class="sidebar-sub-header level4"><a href="/personalNotes/pages/7766d9/#更新集群配置-cluster-reroute-api" class="sidebar-link">更新集群配置(cluster reroute API)</a></li></ul></li><li class="sidebar-sub-header level2"><a href="/personalNotes/pages/7766d9/#节点类型" class="sidebar-link">节点类型</a></li><li class="sidebar-sub-header level2"><a href="/personalNotes/pages/7766d9/#数据迁移" class="sidebar-link">数据迁移</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header level3"><a href="/personalNotes/pages/7766d9/#reindex" class="sidebar-link">reindex</a></li><li class="sidebar-sub-header level4"><a href="/personalNotes/pages/7766d9/#reindex-介绍" class="sidebar-link">reindex 介绍</a></li><li class="sidebar-sub-header level4"><a href="/personalNotes/pages/7766d9/#reindex-支持参数" class="sidebar-link">reindex 支持参数</a></li><li class="sidebar-sub-header level4"><a href="/personalNotes/pages/7766d9/#reindex-异步操作" class="sidebar-link">reindex 异步操作</a></li></ul></li></ul></li></ul></section></li><li><section class="sidebar-group collapsable is-sub-group depth-1"><p class="sidebar-heading"><span>Mongodb</span> <span class="arrow right"></span></p> <!----></section></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>多线程学习与记录</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>问题排查-性能优化</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>中间件</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>安全性</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>分布式扫盲</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>开源项目</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>杂项</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <div><main class="page"><div class="theme-vdoing-wrapper "><div class="articleInfo-wrap" data-v-06225672><div class="articleInfo" data-v-06225672><ul class="breadcrumbs" data-v-06225672><li data-v-06225672><a href="/personalNotes/" title="首页" class="iconfont icon-home router-link-active" data-v-06225672></a></li> <li data-v-06225672><a href="/personalNotes/categories/?category=Java%E5%BC%80%E5%8F%91%E7%9F%A5%E8%AF%86" title="分类" data-v-06225672>Java开发知识</a></li><li data-v-06225672><a href="/personalNotes/categories/?category=%E6%95%B0%E6%8D%AE%E5%BA%93" title="分类" data-v-06225672>数据库</a></li><li data-v-06225672><a href="/personalNotes/categories/?category=Elasticsearch" title="分类" data-v-06225672>Elasticsearch</a></li></ul> <div class="info" data-v-06225672><div title="作者" class="author iconfont icon-touxiang" data-v-06225672><a href="https://github.com/SSFsystem" target="_blank" title="作者" class="beLink" data-v-06225672>维生cc</a></div> <div title="创建时间" class="date iconfont icon-riqi" data-v-06225672><a href="javascript:;" data-v-06225672>2023-02-28</a></div> <!----></div></div></div> <!----> <div class="content-wrapper"><div class="right-menu-wrapper"><div class="right-menu-margin"><div class="right-menu-title">目录</div> <div class="right-menu-content"></div></div></div> <h1><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAABKFJREFUSA3tVl1oFVcQnrMbrak3QUgkya1akpJYcrUtIqW1JvFBE9LiQ5v6JmJpolbMg32rVrhgoYK0QiMY6i9Y6EMaW5D+xFJaTYItIuK2Kr3+BJNwkxBj05sQY3b3nM6cs2dv9t7NT/vQJw/sndk5M/PNzJkzewGerP+pAmy+ON8lLzUJgA8ZYxYIYZmGYRnctDaWvJJAmTtfP1pvXsBCCPP8QFcCaRkZYACgDZFO4stNIcBCajEOlmmC9XpJ9bAGCaPaPmzPl32dvLSVu3BWCTQs0XQQ6g0DYgwLIoAZbBCdW/i+781o1VVlm/410mw4h06Y7bIPHNyWDyL4FHkX03Q8SrzNhZTZriieckWt7cL6MM85YcLpsi/7O9/iXFT6MswI0DmmpkSaJ0qLxFIm3+i1THHB3zmBH3PYx9CcykcLOeQVVa7QtdxTgQgEleX2AjHYfwA+2ddV77ruGoJUbhGDI09YSNXyMpUt5ylOzxgbUmtOp7NmbNt8v3arjTBfYELmLUV+M+nSawNNAUqpT3ClJWg5I3BLT+cGW/DXNGCa6tx1aakCGEigArTn4TDIPdrXXYKCZNrHLMCOEPvHBlLQ99s9eHB7EB6NTki73CVPQ2F5MSx/uRQixfmq7rK0wYD8w8E905bnPDfwoWs/rfv93NWN/ZfvwsLIU7A09gxECyISeGJkHAau98L97tuw7NXnoPyNF8FcYGLGKsOs0mN3OEyec9esGW/ZEl945dTP34wlR2FZVQWU1q0Cw8Tr7p+hgLLNL0FPxx/Q35mA8aEUrH6nCgwEl0tn7wUiZYJnNRh6DK4UH/k0lfyrsBKdPVv/AriGIQcEDQZ65LBAGe2Rzui9Ybjz7XUppz1/uKBbyVPGkN3ZAeC6hr0x7Nr38N5+EqkoOm17xpoqR9ohQF55ERSvr4Dkr3chNfC3DMzGJlNBElW8w9nsGQvhNGIzDkXzCg8cLK951xHsFBlTJspJNi3ZFIMF2AeDV3q8DNOB+YHi6QTrChDIWDBRi5U5f+ZMfJLu3ccrqxtdxk4SKH336LFxSmkqefwU5T8fhdSdQf9IVKD6aNiwI/hnmcAZ91isYMJIaCUCx9W098+LgruikeTqzqqxKPUwqJyCPJiyemVVZBOijDGjD38Os0jOiSPL1z3SPjXNANbiNPXAdzTfukjjuknNBbyz3nwgTd3AVFqUJ5hpHlq9MveLnWwttUfoygBmvVjuikxND3znrhsELnZk7k+OjIGxeNEkomyLVta0xxn+HZhjBc4YZ/AFjHjz9u3xRZl2BN4aq9nFwWh16IrQ1aHHEd3j1+4/dB9OtH4e29A2H1DyHQRmOSfQZ1Fy7MHBTGB6J/Djq6p3OxyO2cB+4Car7v/o3GXgfAkj23+x9ID1Teoamo/SXcbvSf2PX7Vc8DdCmE1vN9di+32P9/5YR3vLnhCVGUWBjEkr3yh4H8v9CzmsbdhzOKzsJKM90iFdaTMjRPhGVsakRvOaRidljo6H6G7j+ctrJpsP+4COhDIl0La2+FS4+5mlocBaXY5QnGZysIBYoeSsl5qQzrSj/cgNrfuEzlWBfwA+EjrZyWUvpAAAAABJRU5ErkJggg==">Es集群<!----></h1> <!----> <div class="theme-vdoing-content content__default"><h2 id="搭建"><a href="#搭建" class="header-anchor">#</a> 搭建</h2> <p>为了便捷测试,使用的是docker 部署,可以单个容器启动,也可以直接容器组启动:
+下面的例子是容器组启动</p> <blockquote><p>启动命令: docker-compose up</p></blockquote> <p><strong>docker-compose.yml配置文件</strong></p> <div class="language-yml line-numbers-mode"><pre class="language-yml"><code><span class="token key atrule">version</span><span class="token punctuation">:</span> <span class="token string">&quot;3&quot;</span>
+
+<span class="token key atrule">services</span><span class="token punctuation">:</span>
+
+  es<span class="token punctuation">-</span><span class="token key atrule">master</span><span class="token punctuation">:</span>
+
+    image<span class="token punctuation">:</span> elasticsearch<span class="token punctuation">:</span>7.4.2
+
+    container_name<span class="token punctuation">:</span> es<span class="token punctuation">-</span>master
+
+    environment<span class="token punctuation">:</span>
+
+      <span class="token punctuation">-</span> <span class="token string">&quot;ES_JAVA_OPTS=-Xms512m -Xmx512m&quot;</span>
+
+    ulimits<span class="token punctuation">:</span>
+
+      memlock<span class="token punctuation">:</span>
+
+        soft<span class="token punctuation">:</span> <span class="token number">-1</span>
+
+        hard<span class="token punctuation">:</span> <span class="token number">-1</span>
+
+      nofile<span class="token punctuation">:</span>
+
+        soft<span class="token punctuation">:</span> <span class="token number">65536</span>
+
+        hard<span class="token punctuation">:</span> <span class="token number">65536</span>
+
+    ports<span class="token punctuation">:</span>
+
+      <span class="token punctuation">-</span> <span class="token string">&quot;9200:9200&quot;</span>
+
+      <span class="token punctuation">-</span> <span class="token string">&quot;9300:9300&quot;</span>
+
+    volumes<span class="token punctuation">:</span>
+
+      <span class="token punctuation">-</span> C<span class="token punctuation">:</span>\projectSpace\Docker<span class="token punctuation">-</span>compose\elasticsearch\data\es1\config/es.yml<span class="token punctuation">:</span>/usr/share/elasticsearch/config/elasticsearch.yml
+
+      <span class="token punctuation">-</span> C<span class="token punctuation">:</span>\projectSpace\Docker<span class="token punctuation">-</span>compose\elasticsearch\data\es1\data<span class="token punctuation">:</span>/usr/share/elasticsearch/data
+
+      <span class="token punctuation">-</span> C<span class="token punctuation">:</span>\projectSpace\Docker<span class="token punctuation">-</span>compose\elasticsearch\data\es1\log<span class="token punctuation">:</span>/usr/share/elasticsearch/log
+
+    networks<span class="token punctuation">:</span>
+
+      <span class="token punctuation">-</span> net<span class="token punctuation">-</span>es
+
+  es<span class="token punctuation">-</span><span class="token key atrule">node1</span><span class="token punctuation">:</span>
+
+    image<span class="token punctuation">:</span> elasticsearch<span class="token punctuation">:</span>7.4.2
+
+    container_name<span class="token punctuation">:</span> es<span class="token punctuation">-</span>node1
+
+    environment<span class="token punctuation">:</span>
+
+      <span class="token punctuation">-</span> <span class="token string">&quot;ES_JAVA_OPTS=-Xms512m -Xmx512m&quot;</span>
+
+    ulimits<span class="token punctuation">:</span>
+
+      memlock<span class="token punctuation">:</span>
+
+        soft<span class="token punctuation">:</span> <span class="token number">-1</span>
+
+        hard<span class="token punctuation">:</span> <span class="token number">-1</span>
+
+      nofile<span class="token punctuation">:</span>
+
+        soft<span class="token punctuation">:</span> <span class="token number">65536</span>
+
+        hard<span class="token punctuation">:</span> <span class="token number">65536</span>
+
+    ports<span class="token punctuation">:</span>
+
+      <span class="token punctuation">-</span> <span class="token string">&quot;9201:9200&quot;</span>
+
+      <span class="token punctuation">-</span> <span class="token string">&quot;9301:9300&quot;</span>
+
+    volumes<span class="token punctuation">:</span>
+
+      <span class="token punctuation">-</span> C<span class="token punctuation">:</span>\projectSpace\Docker<span class="token punctuation">-</span>compose\elasticsearch\data\es2\config/es.yml<span class="token punctuation">:</span>/usr/share/elasticsearch/config/elasticsearch.yml
+
+      <span class="token punctuation">-</span> C<span class="token punctuation">:</span>\projectSpace\Docker<span class="token punctuation">-</span>compose\elasticsearch\data\es2\data<span class="token punctuation">:</span>/usr/share/elasticsearch/data
+
+      <span class="token punctuation">-</span> C<span class="token punctuation">:</span>\projectSpace\Docker<span class="token punctuation">-</span>compose\elasticsearch\data\es2\log<span class="token punctuation">:</span>/usr/share/elasticsearch/log
+
+    networks<span class="token punctuation">:</span>
+
+      <span class="token punctuation">-</span> net<span class="token punctuation">-</span>es
+
+  es<span class="token punctuation">-</span><span class="token key atrule">node2</span><span class="token punctuation">:</span>
+
+    image<span class="token punctuation">:</span> elasticsearch<span class="token punctuation">:</span>7.4.2
+
+    container_name<span class="token punctuation">:</span> es<span class="token punctuation">-</span>node2
+
+    environment<span class="token punctuation">:</span>
+
+      <span class="token punctuation">-</span> <span class="token string">&quot;ES_JAVA_OPTS=-Xms512m -Xmx512m&quot;</span>
+
+    ulimits<span class="token punctuation">:</span>
+
+      memlock<span class="token punctuation">:</span>
+
+        soft<span class="token punctuation">:</span> <span class="token number">-1</span>
+
+        hard<span class="token punctuation">:</span> <span class="token number">-1</span>
+
+      nofile<span class="token punctuation">:</span>
+
+        soft<span class="token punctuation">:</span> <span class="token number">65536</span>
+
+        hard<span class="token punctuation">:</span> <span class="token number">65536</span>
+
+    ports<span class="token punctuation">:</span>
+
+      <span class="token punctuation">-</span> <span class="token string">&quot;9202:9200&quot;</span>
+
+      <span class="token punctuation">-</span> <span class="token string">&quot;9302:9300&quot;</span>
+
+    volumes<span class="token punctuation">:</span>
+
+      <span class="token punctuation">-</span> C<span class="token punctuation">:</span>\projectSpace\Docker<span class="token punctuation">-</span>compose\elasticsearch\data\es3/config/es.yml<span class="token punctuation">:</span>/usr/share/elasticsearch/config/elasticsearch.yml
+
+      <span class="token punctuation">-</span> C<span class="token punctuation">:</span>\projectSpace\Docker<span class="token punctuation">-</span>compose\elasticsearch\data\es3/data<span class="token punctuation">:</span>/usr/share/elasticsearch/data
+
+      <span class="token punctuation">-</span> C<span class="token punctuation">:</span>\projectSpace\Docker<span class="token punctuation">-</span>compose\elasticsearch\data\es3/log<span class="token punctuation">:</span>/usr/share/elasticsearch/log
+
+    networks<span class="token punctuation">:</span>
+
+      <span class="token punctuation">-</span> net<span class="token punctuation">-</span>es
+
+<span class="token key atrule">networks</span><span class="token punctuation">:</span>
+
+  net<span class="token punctuation">-</span><span class="token key atrule">es</span><span class="token punctuation">:</span>
+
+    driver<span class="token punctuation">:</span> bridge
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br><span class="line-number">77</span><br><span class="line-number">78</span><br><span class="line-number">79</span><br><span class="line-number">80</span><br><span class="line-number">81</span><br><span class="line-number">82</span><br><span class="line-number">83</span><br><span class="line-number">84</span><br><span class="line-number">85</span><br><span class="line-number">86</span><br><span class="line-number">87</span><br><span class="line-number">88</span><br><span class="line-number">89</span><br><span class="line-number">90</span><br><span class="line-number">91</span><br><span class="line-number">92</span><br><span class="line-number">93</span><br><span class="line-number">94</span><br><span class="line-number">95</span><br><span class="line-number">96</span><br><span class="line-number">97</span><br><span class="line-number">98</span><br><span class="line-number">99</span><br><span class="line-number">100</span><br><span class="line-number">101</span><br><span class="line-number">102</span><br><span class="line-number">103</span><br><span class="line-number">104</span><br><span class="line-number">105</span><br><span class="line-number">106</span><br><span class="line-number">107</span><br><span class="line-number">108</span><br><span class="line-number">109</span><br><span class="line-number">110</span><br><span class="line-number">111</span><br><span class="line-number">112</span><br><span class="line-number">113</span><br><span class="line-number">114</span><br><span class="line-number">115</span><br><span class="line-number">116</span><br><span class="line-number">117</span><br><span class="line-number">118</span><br><span class="line-number">119</span><br><span class="line-number">120</span><br><span class="line-number">121</span><br><span class="line-number">122</span><br><span class="line-number">123</span><br><span class="line-number">124</span><br><span class="line-number">125</span><br><span class="line-number">126</span><br><span class="line-number">127</span><br><span class="line-number">128</span><br><span class="line-number">129</span><br><span class="line-number">130</span><br><span class="line-number">131</span><br><span class="line-number">132</span><br><span class="line-number">133</span><br><span class="line-number">134</span><br><span class="line-number">135</span><br></div></div><p><strong>容器挂载目录下的配置文件</strong></p> <div class="language-yml line-numbers-mode"><pre class="language-yml"><code><span class="token comment"># master主节点配置</span>
+<span class="token comment"># 集群名称</span>
+<span class="token key atrule">cluster.name</span><span class="token punctuation">:</span> es<span class="token punctuation">-</span>cluster
+<span class="token comment"># 节点名称</span>
+<span class="token key atrule">node.name</span><span class="token punctuation">:</span> es<span class="token punctuation">-</span>master
+<span class="token key atrule">node.master</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+<span class="token key atrule">node.data</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+<span class="token comment"># 网络</span>
+<span class="token key atrule">network.host</span><span class="token punctuation">:</span> es<span class="token punctuation">-</span>master
+<span class="token key atrule">http.port</span><span class="token punctuation">:</span> <span class="token number">9200</span>
+<span class="token key atrule">transport.tcp.port</span><span class="token punctuation">:</span> <span class="token number">9300</span>
+<span class="token key atrule">http.cors.enabled</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+<span class="token key atrule">http.cors.allow-origin</span><span class="token punctuation">:</span> <span class="token string">&quot;*&quot;</span>
+<span class="token key atrule">discovery.zen.ping.unicast.hosts</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">&quot;es-master:9300&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;es-node1:9300&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;es-node2:9300&quot;</span><span class="token punctuation">]</span>
+<span class="token comment"># 最少节点</span>
+<span class="token key atrule">discovery.zen.minimum_master_nodes</span><span class="token punctuation">:</span> <span class="token number">2</span>
+<span class="token key atrule">discovery.zen.ping_timeout</span><span class="token punctuation">:</span> 5s
+<span class="token key atrule">bootstrap.memory_lock</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+<span class="token key atrule">action.destructive_requires_name</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+<span class="token key atrule">cluster.initial_master_nodes</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">&quot;es-master&quot;</span><span class="token punctuation">]</span>
+
+<span class="token comment"># 子节点配置</span>
+<span class="token key atrule">cluster.name</span><span class="token punctuation">:</span> es<span class="token punctuation">-</span>cluster
+<span class="token key atrule">node.name</span><span class="token punctuation">:</span> es<span class="token punctuation">-</span>node1
+<span class="token key atrule">node.master</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+<span class="token key atrule">node.data</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+<span class="token key atrule">network.host</span><span class="token punctuation">:</span> es<span class="token punctuation">-</span>node1
+<span class="token key atrule">http.port</span><span class="token punctuation">:</span> <span class="token number">9200</span>
+<span class="token key atrule">transport.tcp.port</span><span class="token punctuation">:</span> <span class="token number">9300</span>
+<span class="token key atrule">http.cors.enabled</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+<span class="token key atrule">http.cors.allow-origin</span><span class="token punctuation">:</span> <span class="token string">&quot;*&quot;</span>
+<span class="token key atrule">discovery.zen.ping.unicast.hosts</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">&quot;es-master:9300&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;es-node1:9300&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;es-node2:9300&quot;</span><span class="token punctuation">]</span>
+<span class="token key atrule">discovery.zen.minimum_master_nodes</span><span class="token punctuation">:</span> <span class="token number">2</span>
+<span class="token key atrule">discovery.zen.ping_timeout</span><span class="token punctuation">:</span> 5s
+<span class="token key atrule">bootstrap.memory_lock</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+<span class="token key atrule">action.destructive_requires_name</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+<span class="token key atrule">cluster.initial_master_nodes</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">&quot;es-master&quot;</span><span class="token punctuation">]</span>
+
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br></div></div><h2 id="集群配置"><a href="#集群配置" class="header-anchor">#</a> 集群配置</h2> <h3 id="集群配置优先级"><a href="#集群配置优先级" class="header-anchor">#</a> 集群配置优先级</h3> <p>集群配置存在优先级问题</p> <ol><li>临时集群配置</li> <li>持久化集群配置</li> <li>elasticsearch.yml配置文件</li></ol> <h3 id="elasticsearch-yml配置文件-范例"><a href="#elasticsearch-yml配置文件-范例" class="header-anchor">#</a> elasticsearch.yml配置文件-范例</h3> <div class="language- line-numbers-mode"><pre class="language-text"><code>cluster.name: es-application #集群名称，要求唯一  
+node.name: node-1 #节点名称  
+path.data: /data/elasticsearch #数据存储路径  
+path.logs: /var/log/elasticsearch #日志路径  
+network.host: 192.168.81.210,127.0.0.1 #对外暴露的地址  
+http.port: 9200 #端口号  
+discovery.zen.ping.unicast.hosts: [“192.168.81.210”, “192.168.81.220”] #主节点要配置上集群各节点ip地址，从节点配置的时候只写上主节点的ip和自己节点的ip即可  
+discovery.zen.minimum_master_nodes: 1 #允许master的数量  
+http.cors.enabled: true  
+http.cors.allow-origin: “*”
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><h2 id="集群常用操作命令"><a href="#集群常用操作命令" class="header-anchor">#</a> 集群常用操作命令</h2> <h4 id="查看集群健康状态-cluster-health-api"><a href="#查看集群健康状态-cluster-health-api" class="header-anchor">#</a> 查看集群健康状态(cluster health API)</h4> <blockquote><p>$ curl -X GET &quot;http://127.0.0.1:9200/_cluster/health?pretty&quot;</p></blockquote> <p><strong>api参数</strong></p> <table><thead><tr><th>字段名称</th> <th>字段含义</th></tr></thead> <tbody><tr><td>level</td> <td>值可以为cluster、indices、shards，用于返回不同层次的健康状况信息，默认为cluster。</td></tr> <tr><td>wait_for_status</td> <td>值可以为green、yellow、red，此参数代表等待集群的状态变为指定的状态或者超时返回。</td></tr> <tr><td>wait_for_no_relocating_shards</td> <td>true/fasle,代表是否等待不存在relocating的分片时返回，默认false。</td></tr> <tr><td>wait_for_no_initializing_shards</td> <td>true/fasle,代表是否等待不存在initializing的分片时返回，默认false。</td></tr> <tr><td>wait_for_active_shards</td> <td>数值，代表等待多少个分片活跃时存活，默认为0，all代表等待所有的分片都为活跃的情况下返回。</td></tr> <tr><td>wait_for_nodes</td> <td>数值，等待指定个数(记为N)的节点可达后返回，可以为**&gt;=N,&lt;=N,&gt;N,&lt;N**,也可以对应使用ge(N),le(N),gt(N),lt(N)</td></tr> <tr><td>wait_for_events</td> <td>给定一个优先级，等待指定优先级的所有队列事件被处理后返回。指定的优先级可为immediate,urgent,high,normal,low,languid</td></tr> <tr><td>timeout</td> <td>当使用wait_for_XXX参数时，指定的超时时间,默认为30s</td></tr> <tr><td>master_timeout</td> <td>连接master节点的超时时间，如果没有设置，则与timeout保持一致。</td></tr> <tr><td>local</td> <td>true/false，true代表从本地节点获取相应的信息，false代表从master节点获取信息，默认为false。</td></tr></tbody></table> <p><strong>返回参数</strong></p> <table><thead><tr><th>字段名称</th> <th>字段含义</th></tr></thead> <tbody><tr><td>cluster_name</td> <td>集群的名称，每个集群拥有一个唯一的名称。</td></tr> <tr><td>status</td> <td>集群的状态，分为green,yellow,red三种，green代表集群所有的主分片和副本分片都正常运行，yellow代表所有的主分片都正常运行，但是存在未正常分配的副本分片，red代表有主分片未能正常分配。</td></tr> <tr><td>timed_out</td> <td>本次查询是否超时，值为true/false。</td></tr> <tr><td>number_of_nodes</td> <td>集群拥有的节点数量。</td></tr> <tr><td>number_of_data_nodes</td> <td>集群拥有的数据节点的数量。</td></tr> <tr><td>active_primary_shards</td> <td>活动的主分片。</td></tr> <tr><td>active_shards</td> <td>活动的分片。</td></tr> <tr><td>relocating_shards</td> <td>显示当前正在从一个节点迁往其他节点的分片的数量。通常来说应该是 0，不过在 Elasticsearch 发现集群不太均衡时，该值会上涨。比如说：添加了一个新节点，或者下线了一个节点。</td></tr> <tr><td>initializing_shards</td> <td>是刚刚创建的分片的个数。比如，当你刚创建第一个索引，分片都会短暂的处于 initializing 状态。这通常会是一个临时事件，分片不应该长期停留在 initializing 状态。你还可能在节点刚重启的时候看到 initializing 分片：当分片从磁盘上加载后，它们会从 initializing 状态开始。</td></tr> <tr><td>unassigined_shards</td> <td>是已经在集群状态中存在的分片，但是实际在集群里又找不着。通常未分配分片的来源是未分配的副本。比如，一个有 5 分片和 1 副本的索引，在单节点集群上，就会有 5 个未分配副本分片。如果你的集群是 red 状态，也会长期保有未分配分片（因为缺少主分片）。</td></tr> <tr><td>number_of_pending_tasks</td> <td>等待中的任务数量。</td></tr> <tr><td>number_of_in_flight_fetch</td> <td>进行中的任务数量。</td></tr> <tr><td>task_max_waiting_in_queue_millis</td> <td>任务在队列中等待的最长时间。</td></tr> <tr><td>active_shards_percent_as_number</td> <td>活动的分片占所有分片的比例。</td></tr></tbody></table> <p>status代表集群的状态，只有green才是集群完全健康的状态，unassigned_shards表明了有多少分片没有被分片，这是一个很重要的指标，正常情况下不应该存在未被分配的分片，number_of_pending_tasks则是等待中的任务数量，如果这个数值太大也需要特别关注。</p> <h4 id="查询集群全部信息-cluster-stats-human-pretty"><a href="#查询集群全部信息-cluster-stats-human-pretty" class="header-anchor">#</a> 查询集群全部信息 /_cluster/stats?human&amp;pretty'</h4> <h4 id="查看集群节点信息-cat-nodes-human-pretty"><a href="#查看集群节点信息-cat-nodes-human-pretty" class="header-anchor">#</a> 查看集群节点信息: /_cat/nodes?human&amp;pretty'</h4> <div class="language- line-numbers-mode"><pre class="language-text"><code>[root@elasticsearch ~]# curl -XGET 'http://localhost:9200/_cat/nodes?human&amp;pretty' 192.168.81.210 21 96 0 0.00 0.01 0.05 mdi * node-1 192.168.81.220 15 96 0 0.00 0.01 0.05 mdi - node-2 第一列显示集群节点的ip 倒数第二列显示集群节点的类型，*表示主节点，-表示工作节点，主节点也属于工作节点，只是多了一个调度的作用
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h4 id="更新集群配置-cluster-reroute-api"><a href="#更新集群配置-cluster-reroute-api" class="header-anchor">#</a> 更新集群配置(cluster reroute API)</h4> <ol><li><p><strong>获取集群配置</strong></p> <p>获取显式设置的集群配置：</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token function">curl</span> <span class="token parameter variable">-X</span> GET <span class="token string">&quot;http://127.0.0.1:9200/_cluster/settings?pretty&quot;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>获取默认的集群配置加上include_defaults参数:</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token function">curl</span> <span class="token parameter variable">-X</span> GET <span class="token string">&quot;http://127.0.0.1:9200/_cluster/settings?include_defaults=true&amp;pretty&quot;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div></li> <li><p><strong>更新集群配置</strong></p> <p>集群配置的更新分为持久化的、临时的更新，持久化的配置更新后集群重启仍然生效，临时的更新在集群重启后不生效。</p> <p>更新持久化配置：</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token function">curl</span> <span class="token parameter variable">-X</span> PUT <span class="token string">&quot;http://127.0.0.1:9200/_cluster/settings?pretty&quot;</span> <span class="token parameter variable">-H</span> <span class="token string">'Content-Type: application/json'</span> -d<span class="token string">'
+{
+    &quot;persistent&quot; : {
+        &quot;indices.recovery.max_bytes_per_sec&quot; : &quot;50mb&quot;
+    }
+}
+'</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><p>更新临时配置:</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token function">curl</span> <span class="token parameter variable">-X</span> PUT <span class="token string">&quot;http://127.0.0.1:9200/_cluster/settings?flat_settings=true&amp;pretty&quot;</span> <span class="token parameter variable">-H</span> <span class="token string">'Content-Type: application/json'</span> -d<span class="token string">'
+{
+    &quot;transient&quot; : {
+        &quot;indices.recovery.max_bytes_per_sec&quot; : &quot;20mb&quot;
+    }
+}
+'</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div></li> <li><p><strong>重置集群配置</strong></p> <p>重置集群配置的只需要将配置项设置为null:</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code>$ <span class="token function">curl</span> <span class="token parameter variable">-X</span> PUT <span class="token string">&quot;http://127.0.0.1:9200/_cluster/settings?pretty&quot;</span> <span class="token parameter variable">-H</span> <span class="token string">'Content-Type: application/json'</span> -d<span class="token string">'
+{
+    &quot;transient&quot; : {
+        &quot;indices.recovery.max_bytes_per_sec&quot; : null
+    }
+}
+'</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><p>还可以使用通配符进行重置:</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code>$ <span class="token function">curl</span> <span class="token parameter variable">-X</span> PUT <span class="token string">&quot;http://127.0.0.1:9200/_cluster/settings?pretty&quot;</span> <span class="token parameter variable">-H</span> <span class="token string">'Content-Type: application/json'</span> -d<span class="token string">'
+{
+    &quot;transient&quot; : {
+        &quot;indices.recovery.*&quot; : null
+    }
+}
+'</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div></li></ol> <h2 id="节点类型"><a href="#节点类型" class="header-anchor">#</a> 节点类型</h2> <p>生产环境建议根据机器选择不同配置的机器设置不同的角色</p> <ol><li>Master:集群状态管理</li> <li>Data: 数据存储处理客户端请求</li> <li>Ingest: 数据处理</li> <li>Coordinate : 复杂查询</li></ol> <div class="language- line-numbers-mode"><pre class="language-text"><code>%%配置参数%%
+node.master
+node.data
+node.ingest
+Coordinate 上面三样都为空
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><h2 id="数据迁移"><a href="#数据迁移" class="header-anchor">#</a> 数据迁移</h2> <p>数据迁移有多种，但目前网上推荐的还是 <code>reindex</code></p> <h3 id="reindex"><a href="#reindex" class="header-anchor">#</a> reindex</h3> <h4 id="reindex-介绍"><a href="#reindex-介绍" class="header-anchor">#</a> reindex 介绍</h4> <p>Reindx API :支持把文档（query 指定文档，不指定则是全部）从一或多个索引（本地或远程）source导入到另外一个索引 dest</p> <p>修改索引的主分片数，修改字段类型，集群内数据迁移/跨集群数据迁移可使用 reindex
+reindex api 的注意事项：</p> <ol><li>_source必须是 enabled 对于 source index 的所有文档</li> <li>reindex 其 dest 无法拷贝 source 索引的settings和mappings，需要自己创建dest 索引再跑reindex</li> <li>reindex功能的底层实现原理是通过scroll方式实现的</li></ol> <div class="language- line-numbers-mode"><pre class="language-text"><code>跨集群 reindex
+1. 修改 elasticsearch.yml 增加白名单 并且重启节点：
+reindex.remote.whitelist: &quot;otherhost:9200, another:9200, 127.0.10.*:9200, localhost:*&quot;
+	支持ip，端口号，通配符
+
+2. _reindex 操作
+POST _reindex
+{
+  &quot;source&quot;: {
+    &quot;remote&quot;: {
+      &quot;host&quot;: &quot;http://otherhost:9200&quot;,
+      &quot;username&quot;: &quot;user&quot;,  # 没有登录验证可不填
+      &quot;password&quot;: &quot;pass&quot;
+    },
+    &quot;index&quot;: &quot;source&quot;,
+    &quot;query&quot;: {   # 匹配 source 中指定查询语句的文档导出
+      &quot;match&quot;: {
+        &quot;test&quot;: &quot;data&quot;
+      }
+    }
+  },
+  &quot;dest&quot;: {  # 导入到 dest 索引
+    &quot;index&quot;: &quot;dest&quot;
+  }
+}
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br></div></div><h4 id="reindex-支持参数"><a href="#reindex-支持参数" class="header-anchor">#</a> reindex 支持参数</h4> <ol><li>source
+<ol><li>index：指定源数据索引库，支持[]指定多个索引库</li> <li>slice：并行化执行reindex操作，自动并行化需要请求后 _reindex?slices=5 增加 slices</li> <li>max_docs：reindex 文档的最大数量</li> <li>remote：数据源是远程es集群</li> <li>query：匹配 source 中指定查询语句的文档导出</li> <li>sort：支持 source 的文档排序导出，配合 size</li> <li><code>_source</code>:支持 source 的文档只导出指定字段</li></ol></li> <li>dest
+<ol><li><ul><li>op_type：默认不生效</li></ul></li> <li><ul><li>routing：可更改导入文档的路由分片信息,值：keep 保留原文档的路由信息，discard 丢弃原文档的路由信息默认_id路由分片，= 指定新的路由信息</li></ul></li> <li><ul><li>routing：可更改导入文档的路由分片信息,值：keep 保留原文档的路由信息，discard 丢弃原文档的路由信息默认_id路由分片，= 指定新的路由信息</li></ul></li> <li><ul><li>routing：可更改导入文档的路由分片信息,值：keep 保留原文档的路由信息，discard 丢弃原文档的路由信息默认_id路由分片，= 指定新的路由信息</li></ul></li> <li>conflicts：默认，版本冲突会中断 _reindex 进程,指定 proceed 则版本冲突不会中断，会返回冲突数量</li> <li>.size：限制从source导出的符合条件的文档数量</li> <li>script：支持脚本操作,对导出的文档做二次加工再导入</li></ol></li></ol> <h4 id="reindex-异步操作"><a href="#reindex-异步操作" class="header-anchor">#</a> reindex 异步操作</h4> <p>reindex api 支持异步操作，执行只返回 task id</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>POST _reindex?wait_for_completion=false
+查看task
+GET _tasks?detailed=true&amp;actions=*reindex
+查看指定task
+GET /_tasks/r1A2WoRbTwKZ516z6NEs5A:36619
+取消task
+POST _tasks/r1A2WoRbTwKZ516z6NEs5A:36619/_cancel
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div></div></div> <!----> <div class="page-edit"><div class="edit-link"><a href="https://github.com/xugaoyi/vuepress-theme-vdoing/edit/master/docs/02.Java开发知识/02.数据库/04.Elasticsearch/03. Es集群.md" target="_blank" rel="noopener noreferrer">编辑</a> <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></div> <!----> <div class="last-updated"><span class="prefix">上次更新:</span> <span class="time">2023/03/06, 09:00:05</span></div></div> <div class="page-nav-wapper"><div class="page-nav-centre-wrap"><a href="/personalNotes/pages/24fced/" class="page-nav-centre page-nav-centre-prev"><div class="tooltip">Es学习文档</div></a> <a href="/personalNotes/pages/02f5ab/" class="page-nav-centre page-nav-centre-next"><div class="tooltip">多线程学习与记录</div></a></div> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/personalNotes/pages/24fced/" class="prev">Es学习文档</a></span> <span class="next"><a href="/personalNotes/pages/02f5ab/">多线程学习与记录</a>→
+      </span></p></div></div></div> <div class="article-list"><div class="article-title"><a href="/personalNotes/archives/" class="iconfont icon-bi">最近更新</a></div> <div class="article-wrapper"><dl><dd>01</dd> <dt><a href="/personalNotes/pages/eb3032/"><div>
+            Flink 的视频教程
+            <!----></div></a> <span class="date">04-02</span></dt></dl><dl><dd>02</dd> <dt><a href="/personalNotes/pages/9522ac/"><div>
+            数据库优化-3
+            <!----></div></a> <span class="date">03-29</span></dt></dl><dl><dd>03</dd> <dt><a href="/personalNotes/pages/0a4f7f/"><div>
+            基于apache的flink
+            <!----></div></a> <span class="date">03-17</span></dt></dl> <dl><dd></dd> <dt><a href="/personalNotes/archives/" class="more">更多文章&gt;</a></dt></dl></div></div></main></div> <div class="footer"><div class="icons"><a href="mailto:2645327082@qq.com" title="发邮件" target="_blank" class="iconfont icon-youjian"></a><a href="https://github.com/SSFsystem" title="GitHub" target="_blank" class="iconfont icon-github"></a></div> 
+  Theme by
+  <a href="https://github.com/xugaoyi/vuepress-theme-vdoing" target="_blank" title="本站主题">Vdoing</a> 
+    | Copyright © 2019-2023
+    <span>Evan Xu | <a href="https://github.com/xugaoyi/vuepress-theme-vdoing/blob/master/LICENSE" target="_blank">MIT License</a></span></div> <div class="buttons"><div title="返回顶部" class="button blur go-to-top iconfont icon-fanhuidingbu" style="display:none;"></div> <div title="去评论" class="button blur go-to-comment iconfont icon-pinglun" style="display:none;"></div> <div title="主题模式" class="button blur theme-mode-but iconfont icon-zhuti"><ul class="select-box" style="display:none;"><li class="iconfont icon-zidong">
+          跟随系统
+        </li><li class="iconfont icon-rijianmoshi">
+          浅色模式
+        </li><li class="iconfont icon-yejianmoshi">
+          深色模式
+        </li><li class="iconfont icon-yuedu">
+          阅读模式
+        </li></ul></div></div> <!----> <!----> <!----></div><div class="global-ui"><div></div></div></div>
+    <script src="/personalNotes/assets/js/app.d6fad385.js" defer></script><script src="/personalNotes/assets/js/2.bb156fa5.js" defer></script><script src="/personalNotes/assets/js/36.3a18b187.js" defer></script>
+  </body>
+</html>
